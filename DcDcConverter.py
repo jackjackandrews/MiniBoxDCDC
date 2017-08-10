@@ -440,115 +440,115 @@ class DcDcConverter:
         self.DCDCUsbLib.dcdcSaveFlashValues()
 
 
-class SetResTypes(object):
+class SetResTypes:
     """Class containing the return types of all functions in the DCDCUsbLib DLL
     
-        This class will set the return types of any object passed to it when it is called.    
+        This class will set the return types of any dcdcObject passed to it when it is called.    
     """
     
-    def __init__(self, object):
+    def __init__(self, dcdcObject):
         
         #Device initialisation commands
-        object.dcdcOpenDevice.restype = c_ubyte
-        object.dcdcOpenDeviceByCnt.restype = c_ubyte
-        object.dcdcGetDevicePath.restype = None
-        object.dcdcCloseDevice.restype = None
+        dcdcObject.dcdcOpenDevice.restype = c_ubyte
+        dcdcObject.dcdcOpenDeviceByCnt.restype = c_ubyte
+        dcdcObject.dcdcGetDevicePath.restype = None
+        dcdcObject.dcdcCloseDevice.restype = None
         
         #Get commands
-        object.dcdcGetConnected.restype = c_ubyte
-        object.dcdcGetTimeCfg.restype = c_ubyte
-        object.dcdcGetVoltageCfg.restype = c_ubyte
-        object.dcdcGetMode.restype = c_ubyte
-        object.dcdcGetState.restype = c_ubyte
-        object.dcdcGetVin.restype = c_float
-        object.dcdcGetVIgn.restype = c_float
-        object.dcdcGetVOut.restype = c_float
-        object.dcdcGetEnabledPowerSwitch.restype = c_ubyte
-        object.dcdcGetEnabledOutput.restype = c_ubyte
-        object.dcdcGetEnabledAuxVOut.restype = c_ubyte
-        object.dcdcGetFlagsStatus1.restype = c_ubyte
-        object.dcdcGetFlagsStatus2.restype = c_ubyte
-        object.dcdcGetFlagsVoltage.restype = c_ubyte
-        object.dcdcGetFlagsTimer.restype = c_ubyte
-        object.dcdcGetFlashPointer.restype = c_ubyte
-        object.dcdcGetTimerWait.restype = c_uint
-        object.dcdcGetTimerVout.restype = c_uint
-        object.dcdcGetTimerVAux.restype = c_uint
-        object.dcdcGetTimerPwSwitch.restype = c_uint
-        object.dcdcGetTimerOffDelay.restype = c_uint
-        object.dcdcGetTimerHardOff.restype = c_uint
-        object.dcdcGetVersionMajor.restype = c_ubyte
-        object.dcdcGetVersionMinor.restype = c_ubyte
+        dcdcObject.dcdcGetConnected.restype = c_ubyte
+        dcdcObject.dcdcGetTimeCfg.restype = c_ubyte
+        dcdcObject.dcdcGetVoltageCfg.restype = c_ubyte
+        dcdcObject.dcdcGetMode.restype = c_ubyte
+        dcdcObject.dcdcGetState.restype = c_ubyte
+        dcdcObject.dcdcGetVin.restype = c_float
+        dcdcObject.dcdcGetVIgn.restype = c_float
+        dcdcObject.dcdcGetVOut.restype = c_float
+        dcdcObject.dcdcGetEnabledPowerSwitch.restype = c_ubyte
+        dcdcObject.dcdcGetEnabledOutput.restype = c_ubyte
+        dcdcObject.dcdcGetEnabledAuxVOut.restype = c_ubyte
+        dcdcObject.dcdcGetFlagsStatus1.restype = c_ubyte
+        dcdcObject.dcdcGetFlagsStatus2.restype = c_ubyte
+        dcdcObject.dcdcGetFlagsVoltage.restype = c_ubyte
+        dcdcObject.dcdcGetFlagsTimer.restype = c_ubyte
+        dcdcObject.dcdcGetFlashPointer.restype = c_ubyte
+        dcdcObject.dcdcGetTimerWait.restype = c_uint
+        dcdcObject.dcdcGetTimerVout.restype = c_uint
+        dcdcObject.dcdcGetTimerVAux.restype = c_uint
+        dcdcObject.dcdcGetTimerPwSwitch.restype = c_uint
+        dcdcObject.dcdcGetTimerOffDelay.restype = c_uint
+        dcdcObject.dcdcGetTimerHardOff.restype = c_uint
+        dcdcObject.dcdcGetVersionMajor.restype = c_ubyte
+        dcdcObject.dcdcGetVersionMinor.restype = c_ubyte
         
         #Set commands
-        object.dcdcSetEnabledAuxVOut.restype = None
-        object.dcdcSetEnabledPowerSwitch.restype = None
-        object.dcdcSetEnabledOutput.restype = None
-        object.dcdcIncDecVOutVolatile.restype = None
-        object.dcdcSetVOutVolatile.restype = None
-        object.dcdcLoadFlashValues.restype = None
-        object.dcdcGetLoadState.restype = c_ubyte
-        object.dcdcGetMaxVariableCnt.restype = c_uint
-        object.dcdcGetVariableData.restype = c_ubyte
-        object.dcdcSetVariableData.restype = c_ubyte
-        object.dcdcSaveFlashValues.restype = None
+        dcdcObject.dcdcSetEnabledAuxVOut.restype = None
+        dcdcObject.dcdcSetEnabledPowerSwitch.restype = None
+        dcdcObject.dcdcSetEnabledOutput.restype = None
+        dcdcObject.dcdcIncDecVOutVolatile.restype = None
+        dcdcObject.dcdcSetVOutVolatile.restype = None
+        dcdcObject.dcdcLoadFlashValues.restype = None
+        dcdcObject.dcdcGetLoadState.restype = c_ubyte
+        dcdcObject.dcdcGetMaxVariableCnt.restype = c_uint
+        dcdcObject.dcdcGetVariableData.restype = c_ubyte
+        dcdcObject.dcdcSetVariableData.restype = c_ubyte
+        dcdcObject.dcdcSaveFlashValues.restype = None
 
     
-class SetArgsTypes(object):
+class SetArgsTypes(dcdcObject):
     """Class containing the argument types of all functions in the DCDCUsbLib DLL
     
-        This class will set the argument types of any object passed to it when it is called.
+        This class will set the argument types of any dcdcObject passed to it when it is called.
         This is necessary to avoid passing incorrect data types to the DCDCUsbLib functions, and
         saves having to cast arguments when functions are called.    
     """
     
     
-    def __init__(self, object):
+    def __init__(self, dcdcObject):
         
         #Device initialisation commands
-        object.dcdcOpenDevice.argtypes = [c_uint]
-        object.dcdcOpenDeviceByCnt.argtypes = [c_uint, c_uint]
-        object.dcdcGetDevicePath.argtypes = [c_char_p]
-        object.dcdcCloseDevice.argtypes = None
+        dcdcObject.dcdcOpenDevice.argtypes = [c_uint]
+        dcdcObject.dcdcOpenDeviceByCnt.argtypes = [c_uint, c_uint]
+        dcdcObject.dcdcGetDevicePath.argtypes = [c_char_p]
+        dcdcObject.dcdcCloseDevice.argtypes = None
         
         #Get commands
-        object.dcdcGetConnected.argtypes = None
-        object.dcdcGetTimeCfg.argtypes = None
-        object.dcdcGetVoltageCfg.argtypes = None
-        object.dcdcGetMode.argtypes = None
-        object.dcdcGetState.argtypes = None
-        object.dcdcGetVin.argtypes = None
-        object.dcdcGetVIgn.argtypes = None
-        object.dcdcGetVOut.argtypes = None
-        object.dcdcGetEnabledPowerSwitch.argtypes = None
-        object.dcdcGetEnabledOutput.argtypes = None
-        object.dcdcGetEnabledAuxVOut.argtypes = None
-        object.dcdcGetFlagsStatus1.argtypes = None
-        object.dcdcGetFlagsStatus2.argtypes = None
-        object.dcdcGetFlagsVoltage.argtypes = None
-        object.dcdcGetFlagsTimer.argtypes = None
-        object.dcdcGetFlashPointer.argtypes = None
-        object.dcdcGetTimerWait.argtypes = None
-        object.dcdcGetTimerVout.argtypes = None
-        object.dcdcGetTimerVAux.argtypes = None
-        object.dcdcGetTimerPwSwitch.argtypes = None
-        object.dcdcGetTimerOffDelay.argtypes = None
-        object.dcdcGetTimerHardOff.argtypes = None
-        object.dcdcGetVersionMajor.argtypes = None
-        object.dcdcGetVersionMinor.argtypes = None
+        dcdcObject.dcdcGetConnected.argtypes = None
+        dcdcObject.dcdcGetTimeCfg.argtypes = None
+        dcdcObject.dcdcGetVoltageCfg.argtypes = None
+        dcdcObject.dcdcGetMode.argtypes = None
+        dcdcObject.dcdcGetState.argtypes = None
+        dcdcObject.dcdcGetVin.argtypes = None
+        dcdcObject.dcdcGetVIgn.argtypes = None
+        dcdcObject.dcdcGetVOut.argtypes = None
+        dcdcObject.dcdcGetEnabledPowerSwitch.argtypes = None
+        dcdcObject.dcdcGetEnabledOutput.argtypes = None
+        dcdcObject.dcdcGetEnabledAuxVOut.argtypes = None
+        dcdcObject.dcdcGetFlagsStatus1.argtypes = None
+        dcdcObject.dcdcGetFlagsStatus2.argtypes = None
+        dcdcObject.dcdcGetFlagsVoltage.argtypes = None
+        dcdcObject.dcdcGetFlagsTimer.argtypes = None
+        dcdcObject.dcdcGetFlashPointer.argtypes = None
+        dcdcObject.dcdcGetTimerWait.argtypes = None
+        dcdcObject.dcdcGetTimerVout.argtypes = None
+        dcdcObject.dcdcGetTimerVAux.argtypes = None
+        dcdcObject.dcdcGetTimerPwSwitch.argtypes = None
+        dcdcObject.dcdcGetTimerOffDelay.argtypes = None
+        dcdcObject.dcdcGetTimerHardOff.argtypes = None
+        dcdcObject.dcdcGetVersionMajor.argtypes = None
+        dcdcObject.dcdcGetVersionMinor.argtypes = None
         
         #Set commands
-        object.dcdcSetEnabledAuxVOut.argtypes = [c_ubyte]
-        object.dcdcSetEnabledPowerSwitch.argtypes = [c_ubyte]
-        object.dcdcSetEnabledOutput.argtypes = [c_ubyte]
-        object.dcdcIncDecVOutVolatile.argtypes = [c_ubyte]
-        object.dcdcSetVOutVolatile.argtypes = [c_float]
-        object.dcdcLoadFlashValues.argtypes = None
-        object.dcdcGetLoadState.argtypes = None
-        object.dcdcGetMaxVariableCnt.argtypes = None
-        object.dcdcGetVariableData.argtypes = [c_uint, c_char_p, c_char_p, c_char_p, c_char_p]
-        object.dcdcSetVariableData.argtypes = [c_uint, c_char_p]
-        object.dcdcSaveFlashValues.argtypes = None
+        dcdcObject.dcdcSetEnabledAuxVOut.argtypes = [c_ubyte]
+        dcdcObject.dcdcSetEnabledPowerSwitch.argtypes = [c_ubyte]
+        dcdcObject.dcdcSetEnabledOutput.argtypes = [c_ubyte]
+        dcdcObject.dcdcIncDecVOutVolatile.argtypes = [c_ubyte]
+        dcdcObject.dcdcSetVOutVolatile.argtypes = [c_float]
+        dcdcObject.dcdcLoadFlashValues.argtypes = None
+        dcdcObject.dcdcGetLoadState.argtypes = None
+        dcdcObject.dcdcGetMaxVariableCnt.argtypes = None
+        dcdcObject.dcdcGetVariableData.argtypes = [c_uint, c_char_p, c_char_p, c_char_p, c_char_p]
+        dcdcObject.dcdcSetVariableData.argtypes = [c_uint, c_char_p]
+        dcdcObject.dcdcSaveFlashValues.argtypes = None
  
 
 if __name__ == '__main__':

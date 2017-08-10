@@ -26,7 +26,7 @@ It uses the Python [`ctypes`](https://docs.python.org/3/library/ctypes.html) mod
 
     * `timer` is the DCDCUsbLib API refresh rate in **seconds** - ie. how often it refreses the data returned by the `GetXXX()` functions.
 
-    * `timeout` is the time in seconds that the class should carry on trying to detect a device for, if it doesn't detect one at first.
+    * `timeout` is the time in seconds that should carry on trying to detect a device for, if it doesn't detect one at first.
 
 Documentation of available functions is provided within the class itself.
 
