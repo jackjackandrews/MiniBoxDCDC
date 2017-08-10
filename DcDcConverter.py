@@ -494,7 +494,7 @@ class SetResTypes:
         dcdcObject.dcdcSaveFlashValues.restype = None
 
     
-class SetArgsTypes(dcdcObject):
+class SetArgsTypes:
     """Class containing the argument types of all functions in the DCDCUsbLib DLL
     
         This class will set the argument types of any dcdcObject passed to it when it is called.
