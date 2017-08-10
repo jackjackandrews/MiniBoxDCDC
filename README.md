@@ -8,6 +8,8 @@ It uses the Python [`ctypes`](https://docs.python.org/3/library/ctypes.html) mod
 
 **Note: this class only works with x86 (32-bit) versions of the Python interpreter - the DCDCUsbLib dll is compiled for 32-bit platforms only.**
 
+**Note 2: I have only tested this with Python 3.6.1 - it may work with 2.7 or other versions.**
+
 1. Ensure you clone the 'DLL' folder along with the DcDcConverter.py class file itself. This folder contains the DCDCUsbLib.dll provided by MiniBox which packages the functions used to communicate with the module. In addition, it also contains some Microsoft Visual C++ 2005 re-distributables which are required by DCDCUsbLib.dll. These can also be installed as standard system libraries by installing the [Microsoft Visual C++ 2005 Redistributable Package](https://www.microsoft.com/en-us/download/details.aspx?id=3387).
 
     The 'DLL' folder **must** exist in the same directory as the module file - that is where the module looks when it is imported for the first time.
