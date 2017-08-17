@@ -58,7 +58,7 @@ PROJECT_LOGO           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = C:\Users\Jack\Documents\GitHub\MiniBoxDCDC\docs\output
+OUTPUT_DIRECTORY       = .\docs
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -790,7 +790,8 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = C:\Users\Jack\Documents\GitHub\MiniBoxDCDC
+INPUT                  = .\ \
+                         .\docs
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -846,8 +847,6 @@ FILE_PATTERNS          = *.c \
                          *.md \
                          *.mm \
                          *.dox \
-                         *.py \
-                         *.pyw \
                          *.f90 \
                          *.f95 \
                          *.f03 \
@@ -858,7 +857,9 @@ FILE_PATTERNS          = *.c \
                          *.vhd \
                          *.vhdl \
                          *.ucf \
-                         *.qsf
+                         *.qsf \
+                         *.py \
+                         *.pyw
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -873,7 +874,7 @@ RECURSIVE              = NO
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = C:\Users\Jack\Documents\GitHub\MiniBoxDCDC\__init__.py
+EXCLUDE                = .\__init__.py
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -947,7 +948,7 @@ IMAGE_PATH             =
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by doxygen.
 
-INPUT_FILTER           = C:/Users/Jack/AppData/Local/Programs/Python/Python36-32/Scripts/py_filter.bat
+INPUT_FILTER           = 
 
 # The FILTER_PATTERNS tag can be used to specify filters on a per file pattern
 # basis. Doxygen will compare the file name with each pattern and apply the
@@ -960,7 +961,7 @@ INPUT_FILTER           = C:/Users/Jack/AppData/Local/Programs/Python/Python36-32
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by doxygen.
 
-FILTER_PATTERNS        = *.py=py_filter
+FILTER_PATTERNS        = *.py=py_filter.bat
 
 # If the FILTER_SOURCE_FILES tag is set to YES, the input filter (if set using
 # INPUT_FILTER) will also be used to filter the input files that are used for
@@ -982,7 +983,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = 
+USE_MDFILE_AS_MAINPAGE = .\docs\doxygen_README.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
