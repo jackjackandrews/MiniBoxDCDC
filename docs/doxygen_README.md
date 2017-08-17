@@ -6,9 +6,9 @@ It uses the Python [`ctypes`](https://docs.python.org/3/library/ctypes.html) mod
 
 ## How to Use
 
-**Note: this class only works with x86 (32-bit) versions of the Python interpreter - the DCDCUsbLib dll is compiled for 32-bit platforms only.**
+**Note 1: this class only works with x86 (32-bit) versions of the Python interpreter - the DCDCUsbLib dll is compiled for 32-bit platforms only.**
 
-**Note 2: I have only tested this with Python 3.6.1 - it may work with 2.7 or other versions.**
+**Note 2: I have only tested this with Python 3.6.1 - it may or may not work with 2.7 or other versions.**
 
 1. Ensure you clone the 'DLL' folder along with the DcDcConverter.py class file itself. This folder contains the DCDCUsbLib.dll provided by MiniBox which packages the functions used to communicate with the module. In addition, it also contains some Microsoft Visual C++ 2005 re-distributables which are required by DCDCUsbLib.dll. These can also be installed as standard system libraries by installing the [Microsoft Visual C++ 2005 Redistributable Package](https://www.microsoft.com/en-us/download/details.aspx?id=3387).
 
@@ -27,7 +27,5 @@ It uses the Python [`ctypes`](https://docs.python.org/3/library/ctypes.html) mod
     * `timer` is the DCDCUsbLib API refresh rate in **seconds** - ie. how often it refreses the data returned by the `GetXXX()` functions.
 
     * `timeout` is the time in seconds that should carry on trying to detect a device for, if it doesn't detect one at first.
-
-Documentation of available functions is provided within the class itself.
 
 **Note:** If the module is executed by itself (ie. as \_\_main\_\_), it will run a small test program which establishes connection with a DCDC-USB-200 and prints out its Windows device path and firmware version.
